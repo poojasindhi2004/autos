@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CarCard({ car }) {
   return (
@@ -19,9 +20,12 @@ export default function CarCard({ car }) {
           ₹{car.price}
         </p>
 
-        <button className="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-          View Details
-        </button>
+        {/* 👇 Dynamic navigation */}
+        <Link href={`/car/${car.id}`}>
+          <button className="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );
